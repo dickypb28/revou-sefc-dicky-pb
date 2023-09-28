@@ -116,43 +116,37 @@
                     <div class="form-box mt5">
                         <h3>Contact Us</h3>
                         <p class="text-gray">Sales akan menghubungi Anda 1x24 jam setelah data kami terima.</p>
-                        <form id="contact-form" name="contact-form" class="mt5" action="" method="" onsubmit="return validateForm();">
+                        <form id="contact-form" name="contact-form" class="mt5" action="" method="">
                             <div class="form-item name-input">
                                 <div class="label">
                                     <label for="name"><strong>*Your Name:</strong></label>
                                 </div>
-                                <div class="item-input mt1">
+                                <div class="item-input mt1 input-control">
                                     <input name="name" id="name" type="text" placeholder="First and last name" value="">
                                 </div>
-                                <div >
-                                    <p class="nameErrMsg"></p>
-                                </div>
+                                <div class="error"></div>
                             </div>
                             <div class="form-item mt3">
                                 <div class="label">
                                     <label for="email"><strong>*Email Address:</strong></label>
                                 </div>
-                                <div class="item-input mt1">
+                                <div class="item-input mt1 input-control">
                                     <input name="email" id="email" type="text" placeholder="example@email.com" >
                                 </div>
-                                <div class="emailErrMsg" style="display: none;">
-                                    <p>Email should not be blank!</p>
-                                </div>
+                                <div class="error"></div>
                             </div>
                             <div class="form-item mt3">
                                 <div class="label">
                                     <label for="interest"><strong>*What are you interested in?</strong></label>
                                 </div>
-                                <div class="item-select mt1">
+                                <div class="item-select mt1 input-control">
                                     <select name="interest" class="select-interest" id="interest" >
                                         <option value="">Select option</option>
                                         <option value="sayur">Sayuran</option>
                                         <option value="buah">Buah-buahan</option>
                                     </select>
                                 </div>
-                                <div class="interestErrMsg" style="display: none;">
-                                    <p>Interest should not be blank!</p>
-                                </div>
+                                <div class="error"></div>
                             </div>
                             <div class="form-item mt3">
                                 <button id="submit-btn" class="btn-dark" type="submit">SEND</button>

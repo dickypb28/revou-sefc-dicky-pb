@@ -228,7 +228,18 @@ form .item-select {
     width: 100%;
 }
 
+select {
+    cursor: pointer;
+}
+
+.input-control .error {
+    color: red;
+    font-size: 9px;
+    height: 15px;
+}
+
 .btn-dark {
+    cursor: pointer;
     width: 100%;
     background-color: #29323d;
     color: #fff;

@@ -1,13 +1,5 @@
 
 
-// document.getElementById("submit-btn").addEventListener("click", function() {
-//     console.log(name);
-//     console.log(email);
-//     console.log(interest);
-// });
-// document.getElementById("next-btn").addEventListener("click", function() {
-//     nextSlide();
-// })
 
 // CAROUSEL JS
 const carouselSlides = document.querySelectorAll(".item");
@@ -30,18 +22,60 @@ function startSlide() {
     startSlide();
 })()
 
-function validateForm() {
-    let nameValue = document.forms["contact-form"]["name"].value;
+const form = document.getElementById('contact-form');
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const interest = document.getElementById('interest');
 
-    // if(!nameValue) {
-    //     document.getElementsByClassName("nameErrMsg").innerHTML = "Error";
-    // }
-    // else {
-    //     document.getElementsByClassName("nameErrMsg").innerHTML = "Error";
-    // }
-    
-    console.log(nameValue);
-   
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    validateInputs();
+});
+
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add('error');
+    inputControl.classList.remove('success');
 }
+
+const setSuccess = element => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+}
+
+const validateInputs = () => {
+    const nameValue = name.value.trim();
+    const emailValue = email.value.trim();
+    const interestValue = interest.value.trim();
+
+    if(nameValue === '') {
+        setError(name, 'Name is required');
+    }
+    else {
+        setSuccess(name);
+    }
+
+    if(emailValue === '') {
+        setError(email, 'Email is required');
+    }
+    else {
+        setSuccess(email);
+    }
+
+    if(interestValue === '') {
+        setError(interest, 'Interest is required');
+    }
+    else {
+        setSuccess(interest);
+    }
+};
 
 
